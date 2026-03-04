@@ -1,0 +1,45 @@
+<h2>User Form</h2>
+
+<form (ngSubmit)="submitForm()">
+  <input
+    type="text"
+    placeholder="Username"
+    [(ngModel)]="user.username"
+    name="username"
+    required
+  />
+
+  <input
+    type="email"
+    placeholder="Email"
+    [(ngModel)]="user.email"
+    name="email"
+    required
+  />
+
+  <input
+    type="text"
+    placeholder="Address"
+    [(ngModel)]="user.address"
+    name="address"
+  />
+
+  <button type="submit">
+    {{ editingId ? 'Update User' : 'Save User' }}
+  </button>
+
+  <button type="button" (click)="resetForm()" *ngIf="editingId">
+    Cancel
+  </button>
+</form>
+
+<hr />
+
+<h2>Users List</h2>
+
+<ul>
+  <li *ngFor="let u of users">
+    <strong>{{ u.username }}</strong> – {{ u.email }} – {{ u.address }}
+    <button (click)="editUser(u)">Edit</button>
+  </li>
+</ul>
