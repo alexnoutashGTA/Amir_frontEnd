@@ -1,7 +1,7 @@
 <h2>User Form</h2>
 
 <form (ngSubmit)="submitForm()">
-  <input
+   <input
     type="text"
     placeholder="Username"
     [(ngModel)]="user.username"
@@ -41,5 +41,6 @@
   <li *ngFor="let u of users">
     <strong>{{ u.username }}</strong> – {{ u.email }} – {{ u.address }}
     <button (click)="editUser(u)">Edit</button>
+    <button (click)="deleteUser(u)">Edit</button>
   </li>
 </ul>

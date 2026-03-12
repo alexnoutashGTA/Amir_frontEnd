@@ -57,4 +57,9 @@ export class UserComponent implements OnInit {
     this.user = { username: '', email: '', address: '' };
     this.editingId = null;
   }
+
+  deleteUser(u: User) {
+    this.editingId = u._id!;
+    this.user = { ...u };
+  }
 }
